@@ -1,0 +1,23 @@
+name: Subtask-3
+
+on:
+  issues:
+   types:
+     - opened
+     - closed
+
+
+jobs:
+  Action: 
+    runs-on: ubuntu-latest 
+    permissions:
+      issues: write
+    steps:
+     - name: Task-1
+       run: echo "Hello Janta!!"
+     - name: Task-2
+       run: echo '${{ toJSON(github.event) }}' | jq 
+     - name: Task-3
+       run: echo "Action worked successfully!"
+     - name: Task-4
+       run: echo "Thank You."
